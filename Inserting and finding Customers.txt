@@ -1,0 +1,34 @@
+show dbs
+
+use customers
+
+show collections
+
+db.createCollection('customers')
+
+db.customers.insert({first_name:"John", last_name: "Doe"})
+
+db.customers.find()
+
+db.customers.find().pretty()
+
+db.customers.insert([
+	{
+		first_name:"Sam", last_name:"Johnson"
+	},
+	{
+		first_name:"Michelle", last_name:"Smith"
+	},
+	{
+		first_name:"Mike", last_name:"Johnson"
+	}
+])
+
+
+db.customers.insert({first_name:"Wendy", last_name: "Samson", occupation:"Nurse"})
+
+
+db.customers.insert({first_name:"Bob", last_name: "Jackson", occupation:"Technician", age: 36, birthdate: new Date('Sep 12, 1980')})
+
+
+db.customers.findOne({first_name:"Wendy"})

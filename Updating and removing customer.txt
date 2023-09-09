@@ -1,0 +1,35 @@
+db.customers.update({first_name:'Mike',{first_name:'Mike',last_name:'Hill'}})
+
+db.customers.find().pretty()
+
+db.customers.update({first_name:'Mike'},{$set:{last_name:'Hill'}})
+
+db.customers.find().pretty()
+
+db.customers.update({first_name:'Mike'},{$set:{last_name:'Hill',occupation:'Bus Driver',age:48}})
+
+db.customers.find({first_name:'Mike'})
+
+db.customers.find({first_name:'Mike'}).pretty()
+
+db.customers.update({first_name:'Beth'},{$set:{last_name:'Jonas', age: 26}})
+
+db.customers.update({first_name:'Beth'},{$set:{last_name:'Jonas', age: 26}},{upsert: true})
+
+db.customers.find().pretty()
+
+db.update({first_name:'Mike'},{$unset:{age: 1}})
+
+db.customers.update({first_name:'Mike'},{$unset:{age: 1}})
+
+db.customers.find().pretty()
+
+db.customers.remove({first_name:'Michelle'})
+
+db.customers.find().pretty()
+
+db.customers.remove({age:{$gt:30}})
+
+db.customers.find().pretty()
+
+
